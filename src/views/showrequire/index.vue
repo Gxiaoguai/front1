@@ -1,31 +1,33 @@
 <template>
   <div class="wrap">
-    <el-row class="left">
-      <el-col :span="5.5" v-for="(list, index) in lists" :key="index">
-        <el-card :body-style="{ padding: '0px' }" shadow="hover" class="el-cart">
-          <router-link   :to="`/detailrequire/${list.id}`" >
-            <img :src=list.src class="image">
-          </router-link>
-          <div>
-            <p>{{list.ctitle}}</p>
-            <p class="title">{{ list.title }}</p>
-          </div>
-        </el-card>
-      </el-col>
-  </el-row>
-  <div class="right">
-      <el-card class="box-card">
-        <el-input
-          placeholder="请输入搜索内容"
-          v-model="input"
-          clearable>
-        </el-input>
-        <div class="links">
-          <p>热门标签</p>
-          <el-link class="link" type="primary" v-for="item in items">{{item.message}}</el-link>
+    <el-row :gutter="8" >
+      <el-col :span="18" >
+        <div  v-for="(list, index) in lists" :key="index" div='left'>
+          <el-card :body-style="{ padding: '0px' }" shadow="hover" class="el-cart">
+            <router-link   :to="`/detailrequire/${list.id}`" >
+              <img :src=list.src class="image">
+            </router-link>
+            <div>
+              <p>{{list.ctitle}}</p>
+              <p class="title">{{ list.title }}</p>
+            </div>
+          </el-card>
         </div>
+      </el-col>
+      <el-col :span="6" style="height: 560px" >
+        <el-card class="right">
+          <el-input
+            placeholder="请输入搜索内容"
+            v-model="input"
+            clearable>
+          </el-input>
+          <div class="links">
+            <p>热门标签</p>
+            <el-link class="link" type="primary" v-for="item in items">{{item.message}}</el-link>
+          </div>
       </el-card>
-  </div>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -67,6 +69,26 @@ export default {
           src:'https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png',
           title:'hhhhhhhhh',
           ctitle:'我是笨猪'
+        },
+        {
+          src:'https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png',
+          title:'hhhhhhhhh',
+          ctitle:'我是笨猪'
+        },
+        {
+          src:'https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png',
+          title:'hhhhhhhhh',
+          ctitle:'我是笨猪'
+        },
+        {
+          src:'https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png',
+          title:'hhhhhhhhh',
+          ctitle:'我是笨猪'
+        },
+        {
+          src:'https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png',
+          title:'hhhhhhhhh',
+          ctitle:'我是笨猪'
         }
       ],
       items:[
@@ -84,24 +106,13 @@ export default {
         { message: 'Bar' }
       ]
     };
-  }
+  },
+  
 }
 </script>
 <style>
-  .wrap{
-    display:flex;
-    padding: 0;
-    margin-top: -30px;
-  }
-  .left{
-    width: 1100px;
-    text-align: left;
-  }
-  .right{
-    display: flex;
-    flex: 1;
-  }
   .el-cart{
+    float: left;
     width: 210px;
     height: 350px;
     margin: 15px 0px 0 15px ;
@@ -110,16 +121,6 @@ export default {
     font-size: 15px;
     color: #999;
   }
-
-  .image {
-    width: 210px;
-    height: 250px;
-    display: block;
-  }
-  .box-card{
-    width: 400px;
-    padding-top: 20px;
-  }
   .links{
     margin-top: 50px;
     text-align: left;
@@ -127,5 +128,6 @@ export default {
   .link{
     margin-right: 30px;
     margin-bottom: 20px;
-  }
+  } 
+  
 </style>

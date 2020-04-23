@@ -1,6 +1,6 @@
 <template>
   <div>
-     buy
+     <p>我下载的商品：</p>
 
   </div>
 </template>

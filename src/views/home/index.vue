@@ -17,7 +17,7 @@
         </div>
       </el-col>
       <el-col :span="8" class="detail-item-wrapper">
-        <div class="home-detail-item"  v-for="(item, index) of homeDetailItem">
+        <div class="home-detail-item"  v-for="(item, index) of homeDetailItem" :key="index">
           <div class="name">{{item.name}}</div>
           <div class="value">
             <span class="num">{{(item.value / 10000).toFixed(2)}}</span>万
@@ -31,7 +31,7 @@
           </div>
           <div class="content" ref="rankContent">
             <ul class="wrapper-user">
-                <li v-for="item of rankList" class="user-item">
+                <li v-for="item of rankList" class="user-item" :key="item.id">
                   <img class="avatar" :src="item.avatar" width="35" height="35" loading="lazy" alt="">
                   <router-link  :to="`/others/${item.id}`" class="user-info">
                     <p class="name">{{item.name}}</p>
@@ -46,7 +46,7 @@
     <el-row :gutter="8" style="margin-top: 35px">
       <el-col :span="12" style="height: 560px ;overflow: auto">
         <div class="title">
-          <p class="title-value">商品榜</p>
+          <p class="title-value">需求榜</p>
         </div>
         <transaction-table />
       </el-col>
